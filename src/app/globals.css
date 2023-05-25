@@ -6,3 +6,10 @@ body {
   background-color: #111111;
   color: #fff;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0rem 62.5rem rgb(38 38 38) inset;
+  -webkit-text-fill-color: #fff;
+}
