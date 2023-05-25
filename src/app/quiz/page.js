@@ -1,5 +1,7 @@
+import Question from "@/components/Question";
+
 function Page() {
-  return <div>Quiz page</div>;
+  return <Question />;
 }
 
 export default Page;
