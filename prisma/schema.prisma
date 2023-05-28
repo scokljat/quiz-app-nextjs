@@ -20,7 +20,14 @@ model User {
 model Questions {
   id     Int  @id @default(autoincrement())
   question String
-  answers String[]
   correctAnswer String
+  answers Answers[]
 }
 
+model Answers{
+   id     Int  @id @default(autoincrement())
+  question Questions@relation(fields: [questionId], references: [id])
+   questionId Int
+   index String
+   answer String
+}
