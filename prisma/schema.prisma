@@ -14,13 +14,12 @@ model User {
   id        Int  @id @default(autoincrement())
   email     String @unique
   password  String
-  score Int
+  score Int @default(0)
 }
 
 model Questions {
   id     Int  @id @default(autoincrement())
   question String
-  correctAnswer String
   answers Answers[]
 }
 
@@ -29,5 +28,6 @@ model Answers{
   question Questions@relation(fields: [questionId], references: [id])
    questionId Int
    index String
-   answer String
+   answer String  
+  correctAnswer String
 }
