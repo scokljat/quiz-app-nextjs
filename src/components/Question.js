@@ -1,13 +1,12 @@
 "use client";
 import { useEffect, useState, useContext } from "react";
-import { useRouter } from "next/navigation";
 import { ApiContext } from "@/app/context";
 import { getAnswers } from "../app/api/services/questions";
 
 function Question({ question, current, setCounter, nextQuestion }) {
   const [isCorrect, setIsCorrect] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(0);
-  const router = useRouter();
+
   const { user, setUser, answers, setAnswers } = useContext(ApiContext);
 
   useEffect(() => {
