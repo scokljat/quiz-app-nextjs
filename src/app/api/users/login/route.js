@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
@@ -23,6 +24,8 @@ export async function POST(request) {
     if (!validPassword)
       return NextResponse.json({ message: "Invalid password" });
 
-    return NextResponse.json(registeredUser);
+    const token = jwt.sign({ id: registeredUser.id }, process.env.TOKEN_SECRET);
+
+    return NextResponse.json({ token });
   } catch (error) {}
 }
