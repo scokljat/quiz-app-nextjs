@@ -10,7 +10,7 @@ function Form({ buttonTitle, isRegistered }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { user, setUser, token, setToken } = useContext(ApiContext);
+  const { token, setToken } = useContext(ApiContext);
 
   async function fetchData(email, password) {
     const res = isRegistered
