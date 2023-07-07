@@ -11,8 +11,8 @@ function Question({ question, current, setCounter, nextQuestion }) {
 
   useEffect(() => {
     async function fetchData() {
-      const answerRes = await getAnswers(question.id);
-      setAnswers(answerRes.data);
+      const { data } = await getAnswers(question.id);
+      setAnswers(data);
     }
     fetchData();
   }, []);
