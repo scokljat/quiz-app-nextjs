@@ -1,5 +1,5 @@
-import Login from "@/components/forms/Login";
+import Form from "../components/Form";
 
 export default function Home() {
-  return <Login />;
+  return <Form buttonTitle="START" isRegistered={false} />;
 }
